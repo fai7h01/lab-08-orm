@@ -1,9 +1,6 @@
 package com.cydeo.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -20,5 +17,11 @@ public class Product {
     private BigDecimal price;
     private Integer quantity;
     private Integer remainingQuantity;
+
+    @ManyToOne
+    @JoinTable(name = "product_category_rel",
+    joinColumns = @JoinColumn(name = "p_id"),
+    inverseJoinColumns = @JoinColumn(name = "c_id"))
+    private Category category;
 
 }
