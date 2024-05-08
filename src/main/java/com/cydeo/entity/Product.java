@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
 @Data
@@ -18,10 +19,10 @@ public class Product {
     private Integer quantity;
     private Integer remainingQuantity;
 
-    @ManyToOne
+    @ManyToMany
     @JoinTable(name = "product_category_rel",
     joinColumns = @JoinColumn(name = "p_id"),
     inverseJoinColumns = @JoinColumn(name = "c_id"))
-    private Category category;
+    private List<Category> categories;
 
 }
