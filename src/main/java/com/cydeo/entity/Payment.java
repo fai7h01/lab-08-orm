@@ -8,14 +8,9 @@ import java.math.BigDecimal;
 
 @Entity
 @Data
-public class Payment {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Payment extends BaseEntity{
 
     private BigDecimal paidPrice;
-
     @Enumerated(EnumType.STRING)
     private PaymentMethod paymentMethod;
 

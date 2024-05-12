@@ -8,15 +8,10 @@ import java.math.BigDecimal;
 
 @Entity
 @Data
-public class Discount {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Discount extends BaseEntity{
 
     private String name;
     private BigDecimal discount;
-
     @Enumerated(EnumType.STRING)
     private DiscountType discountType;
 

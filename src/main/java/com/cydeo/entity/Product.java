@@ -8,11 +8,7 @@ import java.util.List;
 
 @Entity
 @Data
-public class Product {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Product extends BaseEntity{
 
     private String name;
     private BigDecimal price;
